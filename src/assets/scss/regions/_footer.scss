@@ -1,0 +1,66 @@
+//---------------------------------------------
+//  Site footer
+//  @group site-footer
+//---------------------------------------------
+.site-footer {
+  padding: $pad 0;
+  text-align: center;
+
+  .home &{
+    @media (min-width: $mq-med){
+      display: none;
+    }
+  }
+
+  &__img{
+    display: block;
+    margin: 0 auto;
+    max-width: 3em;
+  }
+  &__logo{
+    display: inline-block;
+    margin: 0.75em auto;
+    font-size: 1.25em;
+  }
+
+  &__sep{
+    width: 3em;
+    height: 1px;
+    display: block;
+    margin: 0.75em auto;
+    background-color: $color-grey;
+  }
+  &__nav{
+    margin: 0 auto 1.5em;
+  }
+
+  &__nav ul{
+    @include unstyled-list;
+    display: flex;
+    justify-content: center;
+  }
+
+  &__nav li{
+    padding: 1em;
+  }
+  &__nav a{
+    @include link-line();
+  }
+
+  &__credz, &__cite{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: $font-subtitle;
+    
+  }
+  &__credz{
+    font-size: $font-xsmall;
+    margin-bottom: 1em;
+  }
+
+  &__cite{
+    
+    font-size: $font-xxsmall;
+  }
+}

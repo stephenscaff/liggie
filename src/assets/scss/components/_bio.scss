@@ -1,0 +1,13 @@
+/*----------------------------------------------
+Bio Section
+-----------------------------------------------*/
+.bio{
+  padding: $pad 0;
+  &__content{
+    @extend %has-dropcap;
+
+    p:first-of-type{
+      @extend %font-lead;
+    }
+  }
+}

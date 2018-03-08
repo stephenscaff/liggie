@@ -1,0 +1,99 @@
+
+//----------------------------------------------  
+//  flex-grid();
+//  @description: Creates grid blocks via flexbox
+
+//  @param: $sm, $med, $lg, $xl - @media sizes
+//  @param: $pad  - item padding  
+//  @useage: @include g-blocks(1, 2, 3, 4, 1%);
+
+//  @note: Can replace universal selector with '& > #{$item}''  ($item:'article')
+//----------------------------------------------
+@mixin flex-grid($sm:null, $med:null, $lg:null, $xl:null, $pad:0) {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  margin-left: -$pad;
+  margin-right: -$pad;
+
+  & > * {
+    padding:$pad;
+    flex-basis: 100%/$sm;
+    max-width: 100%/$sm;
+    
+    @media(min-width: $mq-med){
+      flex-basis: 100%/$med;
+      max-width: 100%/$med;
+    }
+
+    @if $lg {
+      @media(min-width: $mq-large){
+        flex-basis: 100%/$lg;
+        max-width: 100%/$lg;
+      }
+    }
+
+    @if $xl {
+      @media(min-width: $mq-xlarge){
+        flex-basis: 100%/$xl;
+        max-width: 100%/$xl;
+      }
+    }
+  }
+}
+
+//----------------------------------------------  
+//  g-blocks();
+//  @description: Creates grid blocks with clearing via nth-type. 
+//                Might seem a bit much, but shit works.
+//  @param: $gb_sm, $gb_med, $gb_lg, $gb_xl - @media sizes
+//  @param: $pad  - item padding  
+//  @param: $g_item - child element that grid applies to
+//  @useage: @include g-blocks(1%, article, 1, 2, 3, 4);
+//  @todo: maybe make a loop?
+//  & > [class*="-item"]
+//----------------------------------------------
+@mixin grid-blocks($sm:null, $med:null, $lg:null, $xl:null, $pad:0){
+  display: block;
+  padding: 0;
+  margin-left: -$pad;
+  margin-right: -$pad;
+  *zoom: 1; 
+  @include cf;
+
+  & > * {
+    position: relative;
+    display: inline-block;
+    height: auto;
+    float: left;
+    padding:$pad;
+    width: 100%/$sm;
+    $nth-equation: #{$sm}n+'+'+1;
+    &:nth-of-type(n) { clear: none; }
+    &:nth-of-type(#{$nth-equation}) { clear: both; }
+
+    @media(min-width: $mq-med){
+      width: 100%/$med;
+      $nth-equation: #{$med}n+'+'+1;
+      &:nth-of-type(n) { clear: none; }
+      &:nth-of-type(#{$nth-equation}) { clear: both; }
+    }
+    @if $lg {
+    @media(min-width: $mq-large){
+      width: 100%/$lg;
+      $nth-equation: #{$lg}n+'+'+1;
+      &:nth-of-type(n) { clear: none; }
+      &:nth-of-type(#{$nth-equation}) { clear: both; }
+    }
+    }
+    @if $xl {
+    @media(min-width: $mq-xlarge){
+      width: 100%/$gb_xl;
+      $nth-equation: #{$xl}n+'+'+1;
+      &:nth-of-type(n) { clear: none; }
+      &:nth-of-type(#{$nth-equation}) { clear: both; }
+    } 
+    } 
+  }
+}
+

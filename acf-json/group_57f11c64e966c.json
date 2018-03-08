@@ -1,0 +1,72 @@
+{
+    "key": "group_57f11c64e966c",
+    "title": "Instagram",
+    "fields": [
+        {
+            "key": "field_57f11c7bd00f6",
+            "label": "Instagram TItle",
+            "name": "insta_title",
+            "type": "text",
+            "instructions": "Provide a title for the Instagram section.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "ie; Everyday I'm Instagramin'",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "readonly": 0,
+            "disabled": 0
+        },
+        {
+            "key": "field_57f11ceeaa69c",
+            "label": "Number of Pics",
+            "name": "insta_number",
+            "type": "radio",
+            "instructions": "Select the number of pics to show from your Instagram feed.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "3": 3,
+                "4": 4,
+                "5": 5,
+                "6": 6,
+                "8": 8,
+                "10": 10,
+                "12": 12
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "vertical"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/about.php"
+            }
+        ]
+    ],
+    "menu_order": 5,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1475419552
+}

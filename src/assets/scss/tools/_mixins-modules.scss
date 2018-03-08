@@ -1,0 +1,71 @@
+//----------------------------------------------
+//  MODULE MIXINS
+//  Positioning
+//  Backgrounds
+//  Sections (mast)
+//----------------------------------------------
+
+//----------------------------------------------
+//  Microclearfix
+//----------------------------------------------
+@mixin cf {
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+
+
+//----------------------------------------------
+//  bg-overlay()
+//  @description:pseduo overlay element  
+//  @param: $bg_hex: [$color-dark] - hex value for rgba conversion
+//  @param: $bg_opacity:[0.6] - alpha transparency level
+//  @param: $top_layer: element or class name for higher z-index layer
+//----------------------------------------------
+@mixin bg-overlay($bg_hex: $color-dark, $bg_opacity: 0.6, $top_layer: 'div') {
+  &:after {
+    z-index: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: $bg_opacity;
+    background: $bg_hex;
+  }
+  
+  // Layer atop overlay
+  & > #{$top_layer}{
+    z-index: 2;
+    position: relative;
+  }
+}
+
+
+//----------------------------------------------
+//  Has Neg Offset
+//  Fakes a negitive margin, using a psedu element
+//
+//  @param $bg_color backgorund-color
+//----------------------------------------------
+@mixin has-neg-offset($bg_color: #fff, $height: 10em){
+  position: relative;
+
+  div{
+    z-index: $z3;
+    position: relative;
+  }
+  &:after{
+    z-index: 0;
+    content: '';
+    position: absolute;
+    border: 0;
+    bottom: 0;
+    width: 100%;
+    height: $height;
+    background: $bg_color;
+  }
+}

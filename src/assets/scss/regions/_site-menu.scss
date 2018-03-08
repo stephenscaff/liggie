@@ -1,0 +1,146 @@
+/*---------------------------------   
+-Site Header Menu
+-----------------------------------  */
+.site-menu{
+  //background-color: #000;
+  position:fixed;
+  z-index: -9;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  //transform:translateX(-100%);
+  transition:z-index 0.1s 3s ease;
+
+  &__nav{
+    position: relative;
+    z-index: 99;
+    width: 95%;
+    height: 100%;
+    text-align:left;
+    padding-top: 6em;
+    padding-left: 2em;
+    overflow-y: auto;
+  }
+  
+  &__nav ul{
+      @include unstyled-list;
+  }
+
+  &__nav  li{
+    position: relative;
+    letter-spacing: 0.05em;
+    text-align:left;
+    opacity: 0;
+    transform:translateY(3rem);
+    transition:opacity 0.6s $ease-cb-2, transform 1s $ease-cb-2;
+  }
+  &__nav a{
+      position: relative;
+      display:inline-block;
+      overflow:hidden;
+      font-family: $font-header;
+      font-weight: 400;
+    }
+
+    &__link{
+      font-size: 1.5em;
+      padding: 0.15em 0;
+      @include link-styles($color-dark, $color-grey);
+    }
+
+    &__social{
+      padding: 0.05em 0;
+      font-size: 1.1em;
+  }
+
+  &__sep{
+    display: block;
+    height: 2px;
+    width: 3em;
+    margin: 0.5em 0 0.75em;
+    background-color: rgba(0,0,0,0.2);
+  }
+  
+
+
+  &:before, &:after{
+  content: '';
+  position:fixed;
+  z-index: 92;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  }
+
+  &:before{
+  background: rgba(255,255,255,1);
+  width: 200%;
+  transform:translateX(200%);
+  transition: all 1s $ease-cb;
+  }
+  &:after{
+  background: rgba(255,255,255,1);
+  transform:translateX(-100%);
+  transition: all 0 0.1s $ease-cb;
+  }
+  }
+/*----------------------------------   
+.js-menu--is-open : Menu Bars Animate
+-----------------------------------  */
+.js-menu--is-open {
+
+/*----------------------------------------------   
+-Menu Interaction
+-----------------------------------------------  */ 
+  .site-menu{
+    z-index: $z-site-menu;
+    height: 100vh;
+    transform: translateX(0);
+    transition:z-index 0.1s 0s ease;
+
+    &__nav li{
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity 2s 0.7s $ease-cb-2, transform 1s 0.7s $ease-cb-2;
+      //Transition Delay them shites
+      @include nth-trans-delay(7, .1s);
+    }
+    &:before{  
+      //transform-origin: right 100%;
+      transform: translateX(0);
+      transition: all 0.6s 0.6s cubic-bezier(.77,0,.175,1);
+    }
+    &:after{  
+      transform: translateX(0);
+      transition: all 0.6s cubic-bezier(.77,0,.175,1);
+    }
+    }
+  }
+
+
+
+.page-trans{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  background-color: #eee;
+  transform: translateX(110%);
+  z-index: -9;
+  transition: transform 1s $ease-cb-2, z-index 0s ease;
+}
+
+.is-exiting{
+
+  .page-trans{
+    transform: translateX(0);
+    z-index: $z-overlays;
+    transition: transform 1s $ease-cb, z-index 0s;
+  }
+}

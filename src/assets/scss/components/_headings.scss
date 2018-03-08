@@ -1,0 +1,44 @@
+//----------------------------------------------
+//  Headings
+//  Component for section headings.
+//  @group headings
+//-----------------------------------------------
+.heading{
+  position: relative;
+  z-index: $z5;
+  padding: $pad 0;
+  text-align: center;
+
+  &__title{
+    margin: 0.25em auto;
+  }
+
+  &__content{
+    padding: $pad-sm 0;
+  }
+  &__text{
+    max-width: 45em;
+    margin: 0 auto;
+  }
+}
+
+
+.heading.bg-delta{
+
+  .heading__title{
+    color: #fff;
+  }
+}
+.heading--archive{
+  padding: 6em 0 4em;
+}
+.heading + .pad{
+  padding: 0 0 $pad;
+}
+.heading--left{
+  padding: $pad-sm 0;
+
+  .heading__title{
+    text-align: left;
+  }
+}

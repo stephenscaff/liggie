@@ -1,0 +1,89 @@
+/*----------------------------------------------
+-Seperators (hr)
+-----------------------------------------------*/
+%sep,
+.sep{
+  position: relative;
+  border: 0;
+  height: 1px;
+  width: 3em;
+  margin: 1em 0;
+  background-color: $color-dark;
+}
+%sep-center,
+.sep-center{
+  @extend %sep;
+  margin: 1em auto;
+}
+
+
+/*----------------------------------------------
+-Seperator Colod Modifiers
+-----------------------------------------------*/
+.sep--dark{
+ background-color: $color-dark;
+}
+.sep--grey{
+  background-color: $color-grey;
+}
+.sep--white{
+  background-color: $color-light;
+}
+
+
+.has-inset-border:after {
+    content: '';
+    z-index: 9;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-shadow: inset 0px 0px 0px 10px #e2c7ca, inset 0px 0px 0px 12px #000;
+}
+
+
+.border-top, 
+.border-top:after, 
+.border-left, 
+.border-left:after{
+  position: fixed;
+  z-index: 9;
+  background-color: rgb(151, 67, 126);
+  background-color: #fff;
+  //background-image: linear-gradient(-90deg, rgb(151, 67, 126), rgb(220, 36, 91))
+}
+
+.border-top{
+  width: 100%;
+  height: 0.75em;
+  top: 0;
+  width: 0;
+  animation: animate-width ease-in-out 0.5s 0s both;
+
+  &:after{
+    content: '';
+    bottom: 0;
+    width: 100%;
+    height: 0.75em;
+    right: 0;
+    animation: animate-width ease-in-out 0.5s 1s both;
+  }
+}
+
+.border-left{
+  height: 100%;
+  width: 0.75em;
+  left: 0;
+  bottom: 0;
+  animation: animate-height ease-in-out 0.5s 1.5s bothbn ;
+
+  &:after{
+    content: '';
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 0.75em;
+    animation: animate-height ease-in-out 0.5s 0.5s bothbn ;
+  }
+}
+
+

@@ -1,0 +1,72 @@
+//----------------------------------------------
+//  Halfs
+//  50/50 layout.
+//  @group halfs
+//-----------------------------------------------
+.halfs{
+  position: relative;
+  @media (min-width: $mq-med){
+    display: flex;
+    flex-direction: row-reverse;
+    height: 100vh;
+  }  
+
+  &__col{
+    position: relative;
+    display:flex;
+    align-items:center;
+    min-height: 17em;
+    @media (min-width: $mq-med){
+      width: 50%;
+    }
+  }
+  &__bg{
+    @extend %abs-bg-img;
+  }
+
+  .has-bg-img{
+    min-height: 25em;
+  }
+
+  .has-content{
+    @media (min-width: $mq-med){
+      overflow-y: auto;
+    }
+  }
+  &__content{
+    padding: 3em 2em;
+    margin: 0 auto;
+    @media (min-width: $mq-med){
+      max-width:30em;
+      padding: 9em 2em 3em;
+    }  
+    @media (min-width: $mq-large){
+      max-width:35em;
+      padding: 5em 2em 3em;
+    } 
+    @media (min-height:0) and (min-width: $mq-med){
+      padding: 8em 2em 3em;
+    } 
+    @media (min-height: 20em) and (min-width: $mq-large){
+      padding: 6em 2em 3em;
+    }
+  }
+
+  // Hide overflow for %has-brushstroke
+  &__title{
+    overflow-x: hidden;
+  }
+  &__subtitle{
+    @extend %font-subtitle;
+    font-size: $font-xxsmall;
+    color: $color-alpha;
+  }
+
+  &__text{
+      @extend %has-dropcap;
+  }
+
+  p + .btn{
+    margin-top: 2em;
+  }
+}

@@ -1,0 +1,119 @@
+//----------------------------------------------
+//  CV
+//  Set bg color for cv page
+//  @group cv
+//-----------------------------------------------
+
+.cv{
+  background: $color-lightgrey;
+}
+
+//----------------------------------------------
+//  CV-Mast
+//  @group cv
+//-----------------------------------------------
+
+.cv-mast{
+  padding: 10em 0 1em;
+  @media (min-width: $mq-med){
+    padding: 10em 0 4em;
+  }
+
+  &__title{
+    @extend %font-title-large;
+  }
+}
+
+
+//----------------------------------------------
+//  CV Blocks
+//  CV Block module
+//  @group cv
+//-----------------------------------------------
+.cv-block{
+  padding: 2rem 0;
+  font-size: $font-small;
+  line-height:1.5;
+  border-top: 1px solid $color-darkgrey;
+  @media (min-width: $mq-med){
+    display: flex;
+  }
+
+  // CV header
+  &__header{
+    @extend .g-4;
+  }
+
+  &__title{
+    margin-top: -2rem;
+    padding-top: 2rem;
+    border-top: 3px solid;
+  }
+
+  // CV content
+  &__content{
+    @extend .g-8;
+  }
+
+  // cv cols
+  &__cols{
+    @media (min-width: $mq-med){
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+  // cv col
+  &__col{
+    @extend .g-6;
+    padding: 1em 0;
+  }
+  &__col:nth-of-type(odd){
+    @media (min-width: $mq-med){
+      padding-right: 2em;
+    }
+  }
+  &__col:nth-of-type(n+3){
+    @media (min-width: $mq-med){
+      padding-top: 2em;
+      border-top: 1px solid #ddd;
+    }
+  }
+  // Global span styles
+  span{
+    display: block;
+    line-height: 1.6;
+  }
+
+  &__item-title{
+    font-size: $font-h4;
+    margin: 0 0 1em;
+    @media (max-width: $mq-med){
+      border-top: 1px solid #ddd;
+      padding-top: 2em;
+    }
+  }
+
+  &__subtitle{
+    @extend %font-subtitle;
+    font-size: $font-xsmall;
+    color: #888;
+    margin: 0 0 1em;
+  }
+
+  &__list-title{
+    margin: 0.3em 0 1em;
+    @extend %font-subtitle;
+    font-size: $font-small;
+  }
+
+
+  // cv list
+  &__list{
+    margin-left: 1em;
+    li{
+      font-size: $font-small;
+      line-height: 1.5;
+      padding-bottom: 0.75em;
+    }
+  }
+}

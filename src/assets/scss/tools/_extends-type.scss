@@ -1,0 +1,145 @@
+//---------------------------------------
+//  H1 Theme
+//----------------------------------------
+%font-h1 {
+  font-size: 1.75em; 
+  line-height: 1.4;
+   margin-bottom: 0.5em;
+  @media (min-width: $mq-large) {
+    font-size: $font-h1 + $font-growth;
+  }
+}
+
+//---------------------------------------
+//  H2 Theme
+//----------------------------------------
+%font-h2 {
+  font-size: $font-h2;  
+  line-height: 1.3;
+   margin-bottom: 0.5em;
+  @media (min-width: $mq-xlarge) {
+    font-size: $font-h2 + $font-growth;
+  }
+}
+
+//---------------------------------------
+//  H3 Theme
+//----------------------------------------
+%font-h3 {
+  font-size: $font-h3;  
+  line-height: 1.4;
+  margin-bottom: 0.5em;
+  @media (min-width: $mq-xlarge) {
+    font-size: $font-h3 + $font-growth;
+  }
+}
+//---------------------------------------
+//  H4 Theme
+//----------------------------------------
+%font-h4 {
+  font-size: $font-h4;  
+  line-height: 1.4;
+  margin-bottom: 0.5em;
+  @media (min-width: $mq-xlarge) {
+   font-size: $font-h4 + $font-growth;
+  }
+}
+
+//---------------------------------------
+//  H5 Theme
+//----------------------------------------
+%font-h5 {
+  font-size: $font-h5;  
+  line-height: 1.5;
+  @media (min-width: $mq-xlarge) {
+   font-size: $font-h5 + $font-growth;
+  }
+}
+
+//----------------------------------------------   
+//  Global Font Styles
+//  create extendable and global font/header styles
+//----------------------------------------------- 
+%font-uppercase{
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+}
+
+%font-title-large{
+  font-size: 2.5em;
+  @media (min-width: $mq-large){
+    font-size: 4em;
+  }
+}
+
+%font-title{
+  text-transform: uppercase;
+  font-family: $font-header;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.175em;
+}
+
+%font-subtitle{
+  margin: 1.75em 0;
+  @extend %font-uppercase;
+  font-size: $font-xsmall;
+  font-family: $font-subtitle;
+  font-weight: 500;
+}
+
+%font-subtitle-large{
+  font-family: $font-paragraph;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+}
+
+%font-links{
+  @extend %font-uppercase;
+  font-size: $font-xxsmall;
+  font-family: $font-subtitle;
+  font-weight: 500;
+}
+
+/*----------------------------------------------   
+-section Title Styles
+-----------------------------------------------  */
+%font-lead,
+.font-lead{
+  font-size: 110%;
+ -webkit-hyphens: none;
+ -moz-hyphens: none;
+ -ms-hyphens: none;
+ hyphens: none;
+ margin-bottom: 0.8em;
+ line-height: 1.6;
+ @media (min-width: $mq-med) {
+   font-size: 120%;
+ }
+}
+
+//----------------------------------------------
+//  Unstyled list
+//----------------------------------------------
+%list-unstyled {
+  margin: 0;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+//----------------------------------------------
+//  Inline Lists
+//----------------------------------------------
+%list-inline{
+
+  ul{
+    list-style: none;
+    display: block;
+
+    li{
+      margin-right:  1em;
+      display: inline-block;
+    }
+  }
+}

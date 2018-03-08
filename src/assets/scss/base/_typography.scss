@@ -1,0 +1,153 @@
+//----------------------------------------------
+// Typography
+//----------------------------------------------
+body {
+  font-family: $font-paragraph;
+  line-height: $base-lineheight;
+  color: $color-darkgrey;
+  background-color: #fff;
+}
+
+//----------------------------------------------
+// Fluid body sizing
+//----------------------------------------------
+body {
+  font-size: 100%;
+  
+  @media (min-width: $mq-small) {
+    font-size: 101%;
+  }
+  @media (min-width: $mq-med) {
+    font-size: 102%;
+  }
+  @media (min-width: $mq-large) {
+    font-size: 105%;
+  }
+  @media (min-width: 75em) {
+    font-size: 107%;
+  }
+  @media (min-width: $mq-xlarge) {
+    font-size: 115%;
+  }
+  @media (min-width: $mq-xxlarge) {
+    font-size: 125%;
+  }
+  @media (min-width: $mq-xxxlarge) {
+    font-size: 150%;
+  }
+}
+
+//----------------------------------------------
+//  Headings
+//  @group    typography
+//  @requires {placeholder} %font-h* tools/extends/_extends-type.scss
+//----------------------------------------------
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-header;
+  font-weight: 400;
+  color: $color-darkgrey;
+}
+
+/*----------------------------------------------   
+-Headings
+@see: scss/tools/_extends-type.php for themes
+@see: scss/tools/_config.php for sizes
+-----------------------------------------------  */
+
+h1, .font-h1 {
+  @extend %font-h1;
+}
+
+h2, .font-h2 {
+  @extend %font-h2;
+}
+
+h3, .font-h3 {
+  @extend %font-h3;
+}
+
+h4, .font-h4 {
+  @extend %font-h4;
+}
+
+h5, .font-h5 {
+  @extend %font-h5;
+}
+
+
+//----------------------------------------------
+//  paragraphs
+//  @group typography
+//----------------------------------------------
+
+p {
+  margin-top: 0;
+  margin-bottom: .75em;
+  letter-spacing: 0.005em;
+  @media (min-width: $mq-med){
+    font-size: $font-small;
+  }
+}
+
+small {
+  display: block;
+  margin-bottom: 1em;
+  font-size: 80%;
+}
+
+//----------------------------------------------
+//  Drop Cap
+//  @group typography
+//----------------------------------------------
+%has-dropcap p:first-child:first-letter,
+.has-dropcap p:first-child:first-letter { 
+  float: left; 
+  padding-right: 0.1em;
+  font-size: 4em;
+  line-height: 0.8;
+  color: $color-alpha; 
+}
+
+//----------------------------------------------
+//  Has Brushstroke
+//  Adds a brushstroke bg image
+//  @group typography
+//----------------------------------------------
+%has-brushstroke, 
+.has-brushstroke{
+  position: relative;
+  z-index: 2;
+  
+  &:before, &:after{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 118%;
+    top: 15%;
+    left: -3%;
+  }
+
+  &:before{
+    z-index: -1;
+    background-color: #fff;
+    animation: reveal-right 1s 1s $ease-cb both;
+
+  }
+  &:after{
+    z-index: -2;  
+    background-image: url(../images/decor/decor-brushstroke-alpha.png);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 100%;
+  }
+}
+
+//----------------------------------------------
+//  Selection
+//  @group typography
+//----------------------------------------------
+::selection {
+  color: white;
+  background: $color-alpha;
+  text-shadow: none;
+}

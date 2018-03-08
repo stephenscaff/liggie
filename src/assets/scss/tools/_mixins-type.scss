@@ -1,0 +1,86 @@
+//---------------------------------------------- 
+//  link-styles()
+//  @description: Transition Delay on nth-childs
+//  @param: $mainColor: [$color-darkgrey] - initial color
+//  @param: $hoverColor:[$color-alpha]    - hover color
+//----------------------------------------------
+@mixin link-styles($mainColor: $color-darkgrey, $hoverColor: $color-alpha){
+ color: $mainColor;
+ text-decoration: none; 
+ line-height:inherit;
+ transition: color 0.4s ease-in-out;
+
+ &:hover, &:focus{
+  color: $hoverColor;
+  transition: color 0.4s ease-in-out;
+ }
+ &:active{
+  color: darken($hoverColor, 25);
+ }
+}
+
+//----------------------------------------------  
+//  link-line($color-alpha, $color-grey, $color-dark)
+//
+//  @description: link styles with an underline that animates in on hover.
+//  @param: $color = main color;
+//  @param: $line_color = the color of the line below link, before hover
+//  @param: $hover_color = color of hover, link and line.
+//----------------------------------------------
+@mixin link-line($color: $color-dark, $line_color: $color-alpha, $hover_color: $color-black){
+ position: relative;
+ display: inline-block;
+ vertical-align: bottom;
+ color: $color; 
+ text-decoration: none; 
+ line-height:inherit;
+ transition: color 0.4s ease-in-out;
+ overflow-x:hidden; 
+
+ &:before{
+  content: '';
+  position: absolute;
+  background-color:$line_color;
+  left:0;
+  bottom: 5px;
+  margin: 0 auto;
+  width: 100%;
+  height: 1px;
+  transform:translateX(0%);
+ }
+ &:after{
+  content: '';
+  position: absolute;
+  background-color: $hover_color;
+  left:0;
+  bottom: 5px;
+  margin: 0 auto;
+  width: 100%;
+  height: 1px;
+  transform:translateX(-110%);
+  transition: transform 0.6s ease-in-out, color 0.6s ease-in-out;;
+ }
+ &:hover, &:focus{
+  cursor: pointer;
+  color: $hover_color;
+  transition: color 0.4s ease-in-out;
+ }
+ &:hover:after{
+  transform: translateX(0);
+  transition: transform 0.6s $ease-cb-2, color 0.6s $ease-cb-2;
+ }
+ &:active{
+  color: darken($hover_color, 25);
+ }
+}
+
+
+//----------------------------------------------
+//  unstyled-list
+//  @description: creates an unstyled list
+//----------------------------------------------
+@mixin unstyled-list {
+  margin: 0 auto;
+  padding-left: 0;
+  list-style-type: none;
+}

@@ -1,0 +1,38 @@
+//----------------------------------------------
+//  bg-abs
+//   Absolutely positions a nested element and fills it's space
+//----------------------------------------------
+%abs-bg{
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+//----------------------------------------------
+//  bg-img
+//  Common bg image styles
+//----------------------------------------------
+%bg-img{
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+%bg-img-gif{
+  background-size: 100%;
+  background-position: 50%;
+  background-repeat: repeat;
+}
+//----------------------------------------------
+//  abs-bg-img
+//  Abs positioned nested element with bg styles.
+//----------------------------------------------
+%abs-bg-img{
+  @extend %abs-bg;
+  @extend %bg-img;
+}
+
+

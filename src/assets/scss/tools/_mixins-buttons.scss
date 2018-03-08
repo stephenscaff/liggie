@@ -1,0 +1,62 @@
+//---------------------------------------
+//  Button Placeholder
+//  @group  buttons
+//----------------------------------------
+%btn-theme{
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  @extend %font-links;
+  text-align: center;
+  cursor: pointer;
+  -webkit-appearance: none;
+  transition: all 0.4s $ease-cb-2;
+}
+//---------------------------------------
+//  Button
+//  @group  buttons
+//----------------------------------------
+@mixin btn($color, $line_color, $hover_color, $hover_line_color){
+  @extend %btn-theme;
+  color: $color;
+
+  &:before, &:after{
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    transition: all 1s $ease-cb-2;
+  }
+
+  &:after{
+    width: 100%;
+    opacity: 1;
+    background-color: $line_color;
+    z-index: 2;
+  }
+
+  &:before{
+    width: 0%;
+    opacity: 1;
+    z-index: 3;
+    background-color: $hover_line_color;
+  }  
+   &:hover{
+    color: $hover_color;
+    cursor: pointer !important;
+    transition: all 0.7s $ease-cb-2;
+
+    &:before{
+      width: 100%;
+      opacity: 1;
+      transition: all 1s $ease-cb-2;
+    }
+  }
+}

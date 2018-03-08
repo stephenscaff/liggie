@@ -1,0 +1,7 @@
+//---------------------------------------
+//  Link Styles
+//  @requires (mixin) btn tools/mixins-type
+//----------------------------------------
+a{
+  @include link-styles($color-alpha, $color-grey)
+}

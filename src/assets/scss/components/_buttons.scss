@@ -1,0 +1,47 @@
+//---------------------------------------
+//  Buttons
+//  @requires (mixin) btn tools/mixins-buttons
+//  @param    $color, $line_color, $hover_color, $hover_line_color
+//  @group    buttons
+//----------------------------------------
+.btn{
+  @include btn($color-black, $color-alpha, $color-alpha, $color-lightgrey);
+}
+
+//---------------------------------------
+//  Button Size Modifiers
+//  @group    buttons
+//----------------------------------------
+.btn--small {
+  font-size: .9em;
+  padding: .5em 1.5em;
+}
+
+.btn--full {
+  display: block;
+  width: 100%;
+}
+
+//---------------------------------------
+//  Button Letter animation
+//  @see    js/components/spanizer.js
+//  @group    buttons
+//----------------------------------------
+
+.btn.js-letters{
+
+  span{
+    transition: color 0.3s $ease-cb-2;
+    @include nth-trans-delay(15, 0.05s);
+
+  }
+  &:hover span{
+    color: $color-alpha;
+    transition: color 0.3s $ease-cb-2;
+    @include nth-trans-delay(15, 0.05s);
+  }
+}
+
+
+
+

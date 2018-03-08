@@ -1,0 +1,142 @@
+// ----------------------------------------------
+// CONFIG / SETTINGS
+// Global Vars
+// 01 - Type
+// 02 - Paddings
+// 03 - grid
+// 04 - Media Queries
+// 05 - Colors
+// 06 - Misc
+//-----------------------------------------------
+
+// ----------------------------------------------
+// Fonts
+//-----------------------------------------------
+$font-header: "miller-display", Georgia, serif;
+$font-paragraph: "Miller Text", "miller-text", Georgia, serif;
+$font-subtitle: gotham, Helvetica, sans-serif;
+//$font-title: ;
+//$font-subtitle: ;
+
+// ----------------------------------------------
+// Line Height
+//-----------------------------------------------
+$base-lineheight: 1.85;
+
+// ----------------------------------------------
+// Font Size vars
+//-----------------------------------------------
+$font-h1: 2.25em;
+$font-h2: 2em;
+$font-h3: 1.75em;
+$font-h4: 1.25em;
+$font-h5: 1em;
+
+$font-xlarge: 4em;
+$font-small:    0.9em;
+$font-xsmall:   0.8em;
+$font-xxsmall:  0.7em;
+$font-xxxsmall: 0.5em;
+
+// GLobal font size increase at xlarge break
+$font-growth: 0.2em;
+
+// -----------------------------`-----------------
+// Paddings
+//-----------------------------------------------
+$pad-xl: 8em;
+$pad-lg: 6em;
+$pad:    4em;
+$pad-sm: 2em;
+
+// ----------------------------------------------
+// Grid
+//-----------------------------------------------
+//$grid-max-width: 67em;
+$grid-cols: 12;
+// Grid col sizes
+$grid-col: 100% / $grid-cols;
+// Grid col pad
+$grid-col-pad: 1em;
+$grid-gutter: 2%;
+$grid-max-width-sm: 42em;
+$grid-max-width: 60em; 
+$grid-max-width-med: 70em;
+$grid-max-width-lg: 85%;
+$grid-max-width-xl: 95%;
+$grid-width: 95%;
+
+/*----------------------------------------------
+--Media Queries (min-widths)
+-----------------------------------------------*/
+//Smallest phone
+$mq-xsmall:   22em;
+//phone
+$mq-small:    32em;
+//Tablet
+$mq-med:      54em;
+//laptop
+$mq-large:    65em;
+//Past laptop
+$mq-xlarge:   91em;
+//Mid Size monitor
+$mq-xxlarge:  115em;
+//Thunderbold goes to 157em
+$mq-xxxlarge: 130em;
+
+/*----------------------------------------------
+--Colors
+-----------------------------------------------*/
+$color-alpha:      #e18a94;
+$color-alpha-light: #ffe2e7;
+$color-beta:       #003a49;
+$color-delta:      #ded4da; //bg color
+$color-zeta:       #1b7091;
+
+$color-white:     #fff;
+$color-light:     rgba(255,255,255,0.8);
+$color-dark:      rgba(0,0,0,0.8);
+
+$color-lightgrey: #f4f1f3;
+$color-grey:      #aaa;
+$color-midgrey:   #a7a6a6;
+$color-darkgrey:  #111;
+$color-black:      #111;
+
+$color-alert:     #c43a31;
+$color-success:   #1ABC9C;
+
+
+//----------------------------------------------
+// Base UI
+//----------------------------------------------
+$base-borderradius: 0px;
+$base-border-width: 1px;
+
+//----------------------------------------------
+// Forms
+//----------------------------------------------
+$form-borderwidth: 1px;
+$form-placeholdercolor: $color-darkgrey;
+$form-bordercolor: $color-grey;
+
+//----------------------------------------------
+// Z-Indexs
+//----------------------------------------------
+$z-overlays: 99;
+$z-site-header: 92;
+$z-site-menu: 91;
+$z5: 8;
+$z4: 7;
+$z3: 5;
+$z2: 2;
+$z1: 1;
+$z-base: 0;
+$z-1: -1;
+
+//----------------------------------------------
+// easing
+//----------------------------------------------
+$ease-cb: cubic-bezier(.77,0,.175,1);
+$ease-cb-2: cubic-bezier(.19,1,.22,1);
+$ease-cb-3: cubic-bezier(.77,0,.175,1);
